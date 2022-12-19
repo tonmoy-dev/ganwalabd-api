@@ -12,7 +12,6 @@ const payment = new PaymentSession(
 );
 
 exports.SSLCommerz_payment_init = async (req, res) => {
-  console.log(req.body);
 
   const {
     cartItems,
@@ -91,7 +90,7 @@ exports.SSLCommerz_payment_init = async (req, res) => {
 
       // Initiate Payment and Get session key
       payment.paymentInit().then(async (response) => {
-        console.log(response);
+        // console.log(response);
         res.send(response["GatewayPageURL"]);
         // paymentDone = response["status"] === "SUCCESS";
 
